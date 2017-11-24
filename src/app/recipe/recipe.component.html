@@ -1,3 +1,6 @@
-<div class="row">
-  <app-recipe-summary [recipeSummary]="recipeSummary" class="ml-4 col-md-4"></app-recipe-summary>
+<div class="row card-body m-auto">
+    <app-recipe-summary *ngFor="let recipeSummary of recipeSummaries" 
+      [recipeSummary]="recipeSummary" 
+      class="mt-4 col  col-md-3 col-sm-2">
+    </app-recipe-summary>
 </div>

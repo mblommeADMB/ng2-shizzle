@@ -8,15 +8,23 @@ import {createRecipeSummary, RecipeSummary} from "./recipe-summary/recipe-summar
 })
 export class RecipeComponent implements OnInit {
 
-  recipeSummary: RecipeSummary = createRecipeSummary();
+  recipeSummaries: Array<RecipeSummary> = [];
 
   constructor() { }
 
   ngOnInit() {
-    this.recipeSummary.title = 'Wortelpuree met kip';
-    this.recipeSummary.description = 'Gestoofde worteltjes in puree met gebakken kip.';
-    this.recipeSummary.pictureUrl = 'https://radio2.be/sites/default/files/styles/1200x630/public/images/articles/wortelsla.jpg?itok=OGg_0XsT';
-    this.recipeSummary.pictureCap = 'Heerlijke worteltjes';
+    let recipeSummary: RecipeSummary = createRecipeSummary();
+    recipeSummary.title = 'Wortelpuree met kip';
+    recipeSummary.description = 'Gestoofde worteltjes in puree met gebakken kip.';
+    recipeSummary.pictureUrl = 'https://radio2.be/sites/default/files/styles/1200x630/public/images/articles/wortelsla.jpg?itok=OGg_0XsT';
+    recipeSummary.pictureCap = 'Heerlijke worteltjes';
+
+    this.recipeSummaries.push(recipeSummary);
+    this.recipeSummaries.push(recipeSummary);
+    this.recipeSummaries.push(recipeSummary);
+    this.recipeSummaries.push(recipeSummary);
+    this.recipeSummaries.push(recipeSummary);
+    this.recipeSummaries.push(recipeSummary);
   }
 
 }
