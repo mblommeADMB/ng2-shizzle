@@ -1,3 +1,4 @@
+import { RecipeSandbox } from './../sandboxes/recipe.sandbox';
 import {Component, OnInit} from '@angular/core';
 import {createRecipeSummary, RecipeSummary} from "./recipe-summary/recipe-summary.model";
 
@@ -10,7 +11,9 @@ export class RecipeComponent implements OnInit {
 
   recipeSummaries: Array<RecipeSummary> = [];
 
-  constructor() { }
+  constructor(private recipeSandbox: RecipeSandbox) { 
+    recipeSandbox.getAllRecipes();
+  }
 
   ngOnInit() {
     let recipeSummary: RecipeSummary = createRecipeSummary();
