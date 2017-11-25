@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { RecipeSummary} from "./recipe-summary.model";
+import { RecipeSummary} from "./recipe-summary.viewmodel";
 
 @Component({
   selector: 'app-recipe-summary',
@@ -12,5 +12,5 @@ export class RecipeSummaryComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
+  
 }

@@ -1,6 +1,6 @@
-import { RecipeSandbox } from './../sandboxes/recipe.sandbox';
+import { RecipeSandbox } from './../../sandboxes/recipe/recipe.sandbox';
 import {Component, OnInit} from '@angular/core';
-import {createRecipeSummary, RecipeSummary} from "./recipe-summary/recipe-summary.model";
+import { RecipeSummary, createRecipeSummary } from './recipe-summary/recipe-summary.viewmodel';
 
 @Component({
   selector: 'app-recipe',

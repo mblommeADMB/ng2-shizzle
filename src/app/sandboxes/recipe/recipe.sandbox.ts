@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { RecipeService } from "../services/recipe/recipe.service";
+import { RecipeService } from "../../services/recipe/recipe.service";
 
 @Injectable()
 export class RecipeSandbox {
