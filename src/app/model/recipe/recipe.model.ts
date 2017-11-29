@@ -3,5 +3,5 @@ export interface Recipe {
     dateCreated : Date,
     description : string,
     name: string,
-    pictureUrl : string
-};
+    picture : string
+}
