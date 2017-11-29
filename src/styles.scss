@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+// bootstrap css
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// bootstrap override
+@import "app/scss/colors";
+@import "app/scss/typography";
+@import "app/scss/buttons";
+@import "app/scss/header";
+@import "app/scss/border";
+@import "app/scss/card";
+@import "app/scss/util";

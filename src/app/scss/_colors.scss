@@ -1,0 +1,81 @@
+//
+// Color system
+//
+$white:  #fff;
+$gray-100: #f5f7f8;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #212d33;
+$gray-800: #343a40;
+$gray-900: #212d33;
+$black:  #000;
+
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+
+$blue:        #007bff;
+$indigo:      #6610f2;
+$purple:      #6f42c1;
+$pink:        #e83e8c;
+$red:         #dc3545;
+$orange:      #ff8000;
+$yellow:      #ffc107;
+$light-green: #00965e;
+$green:       #006d49;
+$teal:        #20c997;
+$cyan:        #17a2b8;
+$gray-green:  #4f6b78;
+
+// recipes main colors
+$eunry:       #D4A5A5;
+$derby:       #FFECDA;
+$chinaIvory:  #F9FFEA;
+$regentStBlue: #A6D0E4;
+
+$colors: (
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  light-green: $light-green,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800,
+  gray-green: $gray-green,
+  eunry: $eunry,
+  derby: $derby,
+  china-ivory: $chinaIvory,
+  regent-st-blue: $regentStBlue,
+);
+
+$theme-colors: (
+  primary: $eunry,
+  secondary: $derby,
+  tertiary: $regentStBlue,
+  success: $light-green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+$input-color: $gray-700;

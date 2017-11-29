@@ -19,8 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.scss"
+        "../node_modules/font-awesome/scss/font-awesome.scss",
+        "recipes.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.slim.min.js",

@@ -1,0 +1,35 @@
+@import "styles.scss";
+
+/**
+ * CUSTOM STYLES
+ */
+
+/**
+ * Horizontal rule
+ */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/**
+ * Headings
+ */
+h2+h3 {
+  margin-top: 3rem;
+}
+
+/**
+ * Jumbotron
+ */
+.jumbotron {
+  padding: $jumbotron-padding 0;
+  margin-bottom: $jumbotron-padding;
+  border-bottom: 1px solid $jumbotron-bg;
+  @include border-radius(0);
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: ($jumbotron-padding * 2);
+    padding: ($jumbotron-padding * 2) 0;
+  }
+}

@@ -1,0 +1,17 @@
+body {
+	background-color: $gray-100;
+}
+
+.drop-shadow {
+	box-shadow: 0 0.125rem 0.25rem 0rem rgba(12, 0, 51, 0.1);
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+@each $color, $value in $theme-colors {
+	.border-top-#{$color} {
+		border-top-color: $value !important;
+	}
+}

@@ -1,0 +1,19 @@
+.border-right {
+	border-right: $border-width solid $table-border-color;
+}
+
+.border-left {
+	border-left: $border-width solid $table-border-color;
+}
+
+.border-top {
+	border-top: $border-width solid $table-border-color;
+}
+
+.border-bottom {
+	border-bottom: $border-width solid $table-border-color;
+}
+
+.border-radius-0 {
+	border-radius: 0 !important;
+}

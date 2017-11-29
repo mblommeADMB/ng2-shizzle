@@ -1,0 +1,22 @@
+.card {
+	border: none;
+
+	.card-header {
+		padding: 1.875rem 1.5rem;
+		font-size: 1.5rem;
+		line-height: 1.17;
+	}
+
+	.card-body {
+		padding: 1.5rem;
+		border-radius: inherit;
+	}
+
+	.card-header.bg-tertiary ~ .card-body.bg-quaternary.border,
+	.card-header.badge-tertiary ~ .card-body.bg-quaternary.border {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-top: 0;
+		border-color: transparentize($color: theme-color(tertiary), $amount: 0.8);
+	}
+}
