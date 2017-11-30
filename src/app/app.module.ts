@@ -15,6 +15,7 @@ import {RecipeSummaryConverter} from './components/recipe/recipe-summary/recipe-
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {RecipeConverter} from "./model/recipe/recipe.converter";
+import { HeaderComponent } from './components/header/header.component';
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({ maxAge: 5 })];
 
@@ -44,6 +45,7 @@ const SANDBOXES = [
 @NgModule({
   declarations: [
     COMPONENTS,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import {RecipeSummaryConverter} from './recipe-summary/recipe-summary.converter'
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.css']
+  styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
 

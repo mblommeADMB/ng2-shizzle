@@ -1,0 +1,20 @@
+<div class="recipe-header m-0 p-0">
+  <div class="recipe-header-content p-2">
+
+    <div class="recipe-header-logo ml-3 mr-3">
+      <img src="../../../assets/logo.png">
+    </div>
+
+    <div class="recipe-header-search input-group w-50">
+      <span class="input-group-addon bg-white">
+        <i class="fa fa-search"></i>
+      </span>
+      <input #searchField
+             (keyup.enter)="search(searchField.value)"
+             class="form-control border-left-0"
+             type="text">
+    </div>
+
+  </div>
+  <hr class="p-0 m-0">
+</div>

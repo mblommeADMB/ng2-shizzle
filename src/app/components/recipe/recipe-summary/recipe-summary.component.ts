@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { RecipeSummary} from "./recipe-summary.viewmodel";
+import { RecipeSummary} from './recipe-summary.viewmodel';
 
 @Component({
   selector: 'app-recipe-summary',
   templateUrl: './recipe-summary.component.html',
-  styleUrls: ['./recipe-summary.component.css']
+  styleUrls: ['./recipe-summary.component.scss']
 })
 export class RecipeSummaryComponent implements OnInit {
   @Input() recipeSummary: RecipeSummary;
@@ -12,5 +12,5 @@ export class RecipeSummaryComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  
+
 }
