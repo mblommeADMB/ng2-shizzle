@@ -1,7 +1,7 @@
-import {Converter} from '../../sandboxes/converter';
+import {Converter} from './converter';
 import * as firebase from 'firebase';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
-import {Recipe} from './recipe.model';
+import {Recipe} from '../recipe.model';
 import {Injectable} from '@angular/core';
 
 @Injectable()

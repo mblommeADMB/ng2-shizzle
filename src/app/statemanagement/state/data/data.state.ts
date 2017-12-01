@@ -1,4 +1,4 @@
-import { Recipe } from "../../../model/recipe/recipe.model";
+import { Recipe } from '../../../model/recipe.model';
 
 export type DataState = Readonly<{
     recipes: Array<Recipe>
@@ -6,5 +6,5 @@ export type DataState = Readonly<{
 
 export const initialDataState: DataState = {
     recipes : []
-}
+};
 

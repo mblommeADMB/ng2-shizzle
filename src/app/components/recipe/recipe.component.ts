@@ -1,8 +1,9 @@
-import { RecipeSandbox } from '../../sandboxes/recipe/recipe.sandbox';
+import { RecipeSandbox } from '../../sandboxes/recipe.sandbox';
 import {Component, OnInit} from '@angular/core';
 import {RecipeSummary} from './recipe-summary/recipe-summary.viewmodel';
-import {Recipe} from '../../model/recipe/recipe.model';
+import {Recipe} from '../../model/recipe.model';
 import {RecipeSummaryConverter} from './recipe-summary/recipe-summary.converter';
+import {LabelSandbox} from '../../sandboxes/label.sandbox';
 
 @Component({
   selector: 'app-recipe',
@@ -14,8 +15,11 @@ export class RecipeComponent implements OnInit {
   recipeSummaries: Array<RecipeSummary> = [];
 
   constructor(private recipeSandbox: RecipeSandbox,
+              private labelSandbox: LabelSandbox,
               private recipeSummaryConverter: RecipeSummaryConverter) {
     recipeSandbox.setAllRecipes();
+    labelSandbox.getAllLabels();
+
   }
 
   ngOnInit() {

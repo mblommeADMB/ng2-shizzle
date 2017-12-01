@@ -1,4 +1,4 @@
-import {Recipe} from '../../../model/recipe/recipe.model';
+import {Recipe} from '../../../model/recipe.model';
 import {ActionReducer} from '@ngrx/store/store';
 import {RecipeAction, RecipeActionType} from '../../actions/data/recipe.action';
 

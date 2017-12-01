@@ -1,5 +1,5 @@
-import {Converter} from '../../../sandboxes/converter';
-import {Recipe} from '../../../model/recipe/recipe.model';
+import {Converter} from '../../../model/converters/converter';
+import {Recipe} from '../../../model/recipe.model';
 import {createRecipeSummary, RecipeSummary} from './recipe-summary.viewmodel';
 import {Injectable} from '@angular/core';
 
