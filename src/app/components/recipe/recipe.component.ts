@@ -18,8 +18,6 @@ export class RecipeComponent implements OnInit {
               private labelSandbox: LabelSandbox,
               private recipeSummaryConverter: RecipeSummaryConverter) {
     recipeSandbox.setAllRecipes();
-    labelSandbox.getAllLabels();
-
   }
 
   ngOnInit() {

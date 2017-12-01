@@ -4,6 +4,7 @@ import {RecipeConverter} from '../model/converters/recipe.converter';
 import {AbstractService} from './abstract.service';
 import {Collection} from './generic.service';
 import {FireBaseService} from './firebase.service';
+import {Label} from "../model/label.model";
 
 export const RECIPES = 'recipes';
 
@@ -16,4 +17,7 @@ export class RecipeService extends AbstractService<Recipe> {
     super(fireBaseService, recipeConverter);
   }
 
+  attachLabel(recipe: Recipe, label: Label) {
+    this.modify(recipe, {labels: [...recipe.labels, label]});
+  }
 }

@@ -8,7 +8,12 @@ import {Injectable} from '@angular/core';
 export class RecipeConverter implements Converter<DocumentSnapshot, Recipe> {
 
   to(source: DocumentSnapshot): Recipe {
-    return <Recipe> Object.assign({id: source.id}, source.data())
+    let recipe: Recipe =  <Recipe> Object.assign({id: source.id}, source.data())
+    if (!recipe.labels) {
+      recipe.labels = [];
+    }
+
+    return recipe;
   }
 
   from(target: Recipe): DocumentSnapshot {

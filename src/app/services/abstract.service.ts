@@ -5,9 +5,9 @@ import {Converter} from '../model/converters/converter';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import {CollectionHandler, GenericService} from './generic.service';
 import {FireBaseService} from './firebase.service';
+import {Entity} from '../model/entity.model';
 
-export abstract class AbstractService<T> implements GenericService<T> {
-
+export abstract class AbstractService<T extends Entity> implements GenericService<T> {
   protected collectionName: string;
 
   constructor(private firebaseService: FireBaseService,
@@ -17,12 +17,21 @@ export abstract class AbstractService<T> implements GenericService<T> {
     throw new Error('Method not implemented.');
   }
 
-  getAll(collectionHandler: CollectionHandler<T>) {
-    this.firebaseService.firebaseDAO
+  getAll(): Promise<Array<T>> {
+    return this.firebaseService.firebaseDAO
       .collection(this.collectionName)
       .get()
-      .then(this.convertQuerySnapshot)
-      .then(collectionHandler);
+      .then(this.convertQuerySnapshot);
+  }
+
+  modify(entity: T, modification: any): T {
+    this.firebaseService
+      .firebaseDAO
+      .collection(this.collectionName)
+      .doc(entity.id)
+      .set(modification, {merge: true});
+
+    return null;
   }
 
   protected convertQuerySnapshot: (snapshot: QuerySnapshot) => Promise<Array<T>> =
@@ -36,5 +45,6 @@ export abstract class AbstractService<T> implements GenericService<T> {
 
         resolve(entries);
       });
-    }
+    };
+
 }

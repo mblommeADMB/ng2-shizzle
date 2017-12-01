@@ -12,13 +12,8 @@ export class LabelSandbox {
               private labelService: LabelService) {
   }
 
-  public getAllLabels(): void {
-    this.labelService.getAll(this.handleAllLabels);
+  public getAllLabels(): Promise<Array<Label>> {
+    return this.labelService.getAll();
   }
 
-  private handleAllLabels = (labels: Array<Label>) => {
-    labels.forEach((label:Label) => {
-      console.log(label);
-    });
-  };
 }
