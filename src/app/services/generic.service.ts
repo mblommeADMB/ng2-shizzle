@@ -1,3 +1,5 @@
+import {Entity} from '../model/entity.model';
+
 export type CollectionHandler<T> = (collection: Array<T>) => void;
 export type EntityHandler<T> = (entity: T) => void;
 
@@ -7,10 +9,12 @@ export function Collection(name: string) {
   }
 }
 
-export interface GenericService<T> {
+export interface GenericService<T extends Entity> {
 
-  findById(id: string): T;
+  findById(id: string): Promise<T>;
 
-  getAll(collectionHandler: CollectionHandler<T>);
+  modify(entity: T, modification: any): Promise<T>;
+
+  getAll(): Promise<Array<T>>;
 
 }
