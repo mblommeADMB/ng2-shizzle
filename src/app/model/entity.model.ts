@@ -3,3 +3,12 @@ export interface Entity {
   dateCreated?: Date;
   dateModified?: Date;
 }
+
+export function createEntity() : Entity {
+  return {
+   id: '',
+   dateCreated: new Date(),
+   dateModified: null
+  };
+}
+

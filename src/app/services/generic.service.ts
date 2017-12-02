@@ -11,10 +11,10 @@ export function Collection(name: string) {
 
 export interface GenericService<T extends Entity> {
 
-  findById(id: string): T;
+  findById(id: string): Promise<T>;
 
-  modify(entity: T, modification: any): T;
+  modify(entity: T, modification: any): Promise<T>;
 
-  getAll();
+  getAll(): Promise<Array<T>>;
 
 }

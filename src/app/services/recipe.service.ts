@@ -17,7 +17,8 @@ export class RecipeService extends AbstractService<Recipe> {
     super(fireBaseService, recipeConverter);
   }
 
-  attachLabel(recipe: Recipe, label: Label) {
-    this.modify(recipe, {labels: [...recipe.labels, label]});
+  attachLabel(recipe: Recipe, label: Label): Promise<Recipe> {
+    return this.modify(recipe, {labels: {[label.id]: true}});
   }
+
 }

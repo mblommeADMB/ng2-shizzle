@@ -1,9 +1,18 @@
-import {Label} from './label.model';
-import {Entity} from "./entity.model";
+import { Label } from './label.model';
+import { Entity, createEntity } from './entity.model';
 
 export interface Recipe extends Entity {
-    description : string,
+    description: string,
     name: string,
-    picture : string,
-    labels: Array<Label>,
+    picture: string,
+    labels: { [id: string]: boolean }
+}
+
+export function createRecipe(): Recipe {
+    return <Recipe>Object.assign({
+        description: '',
+        name: '',
+        picture: '',
+        labels: {}
+    }, createEntity());
 }

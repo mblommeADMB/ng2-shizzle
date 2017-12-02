@@ -1,19 +1,14 @@
 import {Converter} from './converter';
 import * as firebase from 'firebase';
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
-import {Recipe} from '../recipe.model';
+import {Recipe, createRecipe} from '../recipe.model';
 import {Injectable} from '@angular/core';
 
 @Injectable()
 export class RecipeConverter implements Converter<DocumentSnapshot, Recipe> {
 
   to(source: DocumentSnapshot): Recipe {
-    let recipe: Recipe =  <Recipe> Object.assign({id: source.id}, source.data())
-    if (!recipe.labels) {
-      recipe.labels = [];
-    }
-
-    return recipe;
+    return <Recipe> Object.assign(createRecipe(), {id: source.id}, source.data());
   }
 
   from(target: Recipe): DocumentSnapshot {
