@@ -29,16 +29,6 @@ export class RecipeSandbox {
   }
 
   private handleSetAllRecipes = (recipes: Array<Recipe>) => {
-    this.labelSandbox
-      .getAllLabels()
-      .then((labels: Array<Label>) => {
-        recipes.forEach((recipe: Recipe) => {
-          labels.forEach((label) => {
-            this.attachLabel(recipe, label);
-          })
-        });
-      });
- 
    this.store.dispatch(new SetAllRecipes(recipes));
   };
 

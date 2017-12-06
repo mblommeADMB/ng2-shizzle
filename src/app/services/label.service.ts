@@ -14,6 +14,7 @@ export class LabelService extends AbstractService<Label> {
   constructor(private fireBaseService: FireBaseService,
               private labelConverter: LabelConverter) {
     super(fireBaseService, labelConverter);
+
   }
 
 }
