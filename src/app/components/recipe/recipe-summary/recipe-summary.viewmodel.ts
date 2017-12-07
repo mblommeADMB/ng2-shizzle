@@ -1,8 +1,13 @@
+import {Label} from "../../../model/label.model";
+import {Observable} from "rxjs/Observable";
+
 export interface RecipeSummary {
   title: string;
   description: string;
   pictureUrl: string;
   pictureCap: string;
+  totalTime: number
+  labels$?: Observable<Array<Label>>;
 }
 
 export function createRecipeSummary() : RecipeSummary {
@@ -10,6 +15,7 @@ export function createRecipeSummary() : RecipeSummary {
     title: '',
     description: '',
     pictureUrl: '',
-    pictureCap: ''
+    pictureCap: '',
+    totalTime: 0,
   };
 }

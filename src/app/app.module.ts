@@ -21,6 +21,7 @@ import {LabelConverter} from './model/converters/label.converter';
 import {LabelService} from './services/label.service';
 import {LabelSandbox} from './sandboxes/label.sandbox';
 import {FireBaseService} from './services/firebase.service';
+import { IconsComponent } from './components/icons/icons.component';
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({ maxAge: 5 })];
 
@@ -59,6 +60,7 @@ const MODULES = [
   declarations: [
     COMPONENTS,
     HeaderComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,

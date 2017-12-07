@@ -16,4 +16,8 @@ export class LabelSandbox {
     return this.labelService.getAll();
   }
 
+  public getLabel(id: string): Promise<Label> {
+    return this.labelService.findById(id);
+  }
+
 }
