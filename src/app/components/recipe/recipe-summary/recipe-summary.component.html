@@ -9,7 +9,7 @@
         <span>{{recipeSummary.totalTime}}</span>
       </div>
       <div>
-        <svg class="ml-1 icon" *ngFor="let label of recipeSummary.labels$ | async">
+        <svg class="ml-1 icon--md" *ngFor="let label of recipeSummary.labels$ | async">
           <use [attr.xlink:href]="label.svgId" />
         </svg>
       </div>
