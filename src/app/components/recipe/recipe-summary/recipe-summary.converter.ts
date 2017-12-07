@@ -6,39 +6,43 @@ import {LabelSandbox} from '../../../sandboxes/label.sandbox';
 import {Label} from '../../../model/label.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import {ActionIcon} from '../../icons/action-icon/action-icon.model';
 
 @Injectable()
 export class RecipeSummaryConverter implements Converter<Recipe, RecipeSummary> {
 
-  constructor(private labelSandBox: LabelSandbox) {}
+    constructor(private labelSandBox: LabelSandbox) {}
 
-  to(source: Recipe): RecipeSummary {
-    let recipeSummary: RecipeSummary = createRecipeSummary();
-    recipeSummary.title = source.name;
-    recipeSummary.pictureUrl = source.picture;
-    recipeSummary.description = source.description;
-    recipeSummary.pictureCap = 'some pic';
-    recipeSummary.totalTime = source.totalTime;
-    recipeSummary.labels$ = Observable.of(this.fetchLabels(source));
+    to(source: Recipe): RecipeSummary {
+        let recipeSummary: RecipeSummary = createRecipeSummary();
+        recipeSummary.title = source.name;
+        recipeSummary.pictureUrl = source.picture;
+        recipeSummary.description = source.description;
+        recipeSummary.pictureCap = 'some pic';
+        recipeSummary.totalTime$ = Observable.of(source.totalTime);
+        recipeSummary.categoryIcons$ = Observable.of(this.fetchLabels(source));
 
-    return recipeSummary;
-  }
-
-  from(target: RecipeSummary): Recipe {
-    throw new Error('Method not implemented.');
-  }
-
-  private fetchLabels(recipe: Recipe): Array<Label> {
-    const labels: Array<Label> = [];
-    for(let labelId of Object.keys(recipe.labels)) {
-      if (recipe.labels[labelId]) {
-        this.labelSandBox
-          .getLabel(labelId)
-          .then((label:Label) => {
-            labels.push(label);
-          })
-      }
+        return recipeSummary;
     }
-    return labels;
-  }
+
+    from(target: RecipeSummary): Recipe {
+        throw new Error('Method not implemented.');
+    }
+
+    private fetchLabels(recipe: Recipe): Array<ActionIcon> {
+        const categoryIcons: Array<ActionIcon> = [];
+        for (let labelId of Object.keys(recipe.labels)) {
+            if (recipe.labels[labelId]) {
+                this.labelSandBox
+                    .getLabel(labelId)
+                    .then((label: Label) => {
+                        const categoryIcon: ActionIcon = {
+                            icon: label.svgId,
+                        }
+                        categoryIcons.push(categoryIcon);
+                    })
+            }
+        }
+        return categoryIcons;
+    }
 }
