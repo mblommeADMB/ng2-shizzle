@@ -4,8 +4,6 @@ import {createRecipeSummary, RecipeSummary} from './recipe-summary.viewmodel';
 import {Injectable} from '@angular/core';
 import {LabelSandbox} from '../../../sandboxes/label.sandbox';
 import {Label} from '../../../model/label.model';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 import {ActionIcon} from '../../icons/action-icon/action-icon.model';
 
 @Injectable()
@@ -19,8 +17,8 @@ export class RecipeSummaryConverter implements Converter<Recipe, RecipeSummary> 
         recipeSummary.pictureUrl = source.picture;
         recipeSummary.description = source.description;
         recipeSummary.pictureCap = 'some pic';
-        recipeSummary.totalTime$ = Observable.of(source.totalTime);
-        recipeSummary.categoryIcons$ = Observable.of(this.fetchLabels(source));
+        recipeSummary.totalTime = source.totalTime;
+        recipeSummary.categoryIcons = this.fetchLabels(source);
 
         return recipeSummary;
     }

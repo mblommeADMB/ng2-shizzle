@@ -1,4 +1,4 @@
 <svg [ngClass]="svgClasses" (click)="doAction($event)">
   <use [attr.xlink:href] ="actionIcon.icon" />
 </svg>
-<span>{{ actionIcon.label$ | async }}</span>
+<span>{{ actionIcon.label }}</span>

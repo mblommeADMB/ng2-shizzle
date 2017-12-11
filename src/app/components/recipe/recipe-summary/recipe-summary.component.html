@@ -4,7 +4,7 @@
         <div class="mt-1 d-flex justify-content-between">
             <app-action-icon svgClasses="icon--md" [actionIcon]="eggTimer"></app-action-icon>
             <div>
-                <ng-template ngFor let-categoryIcon [ngForOf]="recipeSummary.categoryIcons$ | async">
+                <ng-template ngFor let-categoryIcon [ngForOf]="recipeSummary.categoryIcons">
                     <app-action-icon [actionIcon]="categoryIcon" svgClasses="ml-1 icon--md"></app-action-icon>
                 </ng-template>
             </div>
