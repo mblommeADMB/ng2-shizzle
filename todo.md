@@ -1,4 +1,4 @@
-# TODO's
+# Features
 
 ## feature/like-something
 - Description: component om verschillende likes toe te kennen aan verschillende types componenten.
@@ -9,4 +9,5 @@
   - De verzamelde likes worden onder de recepttitel weergegeven met hun aantal.
     - Het weergevan van de verschillende likes is een generieke component voor het weergeven van iconen.
     - Recipe categoriën vallen hier ook onder.
-  
+- TODO:
+  - [ ] create branch
