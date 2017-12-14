@@ -1,10 +1,10 @@
-import {Entity, createEntity} from './entity.model';
+import {createEntity, Entity} from './entity.model';
 
 export interface Label extends Entity {
-  key: string;
-  svgId: string;
+    key: string;
+    svgId: string;
 }
 
 export function createLabel(): Label {
-  return <Label> Object.assign(createEntity(), {key: ''});
+    return <Label> Object.assign(createEntity(), {key: '', svgId: ''});
 }

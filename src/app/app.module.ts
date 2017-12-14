@@ -22,6 +22,9 @@ import {LabelSandbox} from './sandboxes/label.sandbox';
 import {FireBaseService} from './services/firebase.service';
 import {IconsComponent} from './components/icons/icons.component';
 import {ActionIconComponent} from './components/icons/action-icon/action-icon.component';
+import {EmotionService} from './services/emotion.service';
+import {EmotionReferenceConverter} from './model/converters/emotion-reference.converter';
+import {EmotionsSandbox} from './sandboxes/emotions.sandbox';
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({maxAge: 5})];
 
@@ -33,6 +36,7 @@ const CONVERTERS = [
     RecipeSummaryConverter,
     RecipeConverter,
     LabelConverter,
+    EmotionReferenceConverter,
 ];
 
 const COMPONENTS = [
@@ -47,11 +51,13 @@ const SERVICES = [
     FireBaseService,
     RecipeService,
     LabelService,
+    EmotionService,
 ];
 
 const SANDBOXES = [
     RecipeSandbox,
     LabelSandbox,
+    EmotionsSandbox,
 ];
 
 const MODULES = [
