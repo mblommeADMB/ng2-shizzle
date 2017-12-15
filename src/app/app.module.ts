@@ -25,6 +25,7 @@ import {ActionIconComponent} from './components/icons/action-icon/action-icon.co
 import {EmotionService} from './services/emotion.service';
 import {EmotionReferenceConverter} from './model/converters/emotion-reference.converter';
 import {EmotionsSandbox} from './sandboxes/emotions.sandbox';
+import { ActionBarComponent } from './components/icons/action-bar/action-bar.component';
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({maxAge: 5})];
 
@@ -68,6 +69,7 @@ const MODULES = [
     declarations: [
         COMPONENTS,
         HeaderComponent,
+        ActionBarComponent,
     ],
     imports: [
         BrowserModule,

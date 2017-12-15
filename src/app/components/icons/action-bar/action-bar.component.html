@@ -1,0 +1,6 @@
+<ng-template ngFor let-actionIcon$ [ngForOf]="actionIcons$ | async">
+    <app-action-icon [actionIcon]="actionIcon$"
+        class="mr-1"
+        [svgClasses]="svgClasses">
+    </app-action-icon>
+</ng-template>
