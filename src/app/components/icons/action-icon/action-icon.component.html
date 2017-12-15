@@ -1,4 +1,19 @@
-<svg [ngClass]="svgClasses" (click)="doAction($event)">
-  <use [attr.xlink:href] ="actionIcon.icon" />
-</svg>
-<span>{{ actionIcon.label }}</span>
+<div id="actionIconDropdown"
+     [attr.data-toggle]="subMenu ? 'dropdown' : ''"
+     (click)="subMenu ? null : doAction($event)"
+     class="m-0 p-0 d-inline">
+    <svg id="actionIconDropdown" [ngClass]="svgClasses">
+        <style>
+            svg {
+                cursor: pointer;
+                pointer-events: none;
+            }
+        </style>
+        <use [attr.xlink:href]="actionIcon.icon"/>
+    </svg>
+    <span>{{ actionIcon.label }}</span>
+</div>
+
+<div *ngIf="subMenu" class="dropdown-menu" aria-labelledby="actionIconDropdown">
+    <ng-content></ng-content>
+</div>

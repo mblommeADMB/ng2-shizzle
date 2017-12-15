@@ -10,6 +10,7 @@ export class ActionIconComponent implements OnInit {
 
     @Input() actionIcon: ActionIcon;
     @Input() svgClasses: string;
+    @Input() subMenu: boolean = true;
 
     constructor() {}
 
@@ -18,7 +19,8 @@ export class ActionIconComponent implements OnInit {
 
     doAction(event: Event) {
         event.stopPropagation();
-        this.actionIcon.do();
-    }
+       console.log('test');
+        //this.actionIcon.do();
 
+    }
 }
