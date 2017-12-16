@@ -1,8 +1,8 @@
 <div id="actionIconDropdown"
-     [attr.data-toggle]="subMenu ? 'dropdown' : ''"
-     (click)="subMenu ? null : doAction($event)"
+     [attr.data-toggle]="actionIcon.menu ? 'dropdown' : ''"
+     (click)="actionIcon.menu ? createMenu() : doAction($event)"
      class="m-0 p-0 d-inline">
-    <svg id="actionIconDropdown" [ngClass]="svgClasses">
+    <svg id="actionIconDropdown" [ngClass]="actionIcon.svgStyle">
         <style>
             svg {
                 cursor: pointer;
@@ -14,6 +14,6 @@
     <span>{{ actionIcon.label }}</span>
 </div>
 
-<div *ngIf="subMenu" class="dropdown-menu" aria-labelledby="actionIconDropdown">
-    <ng-content></ng-content>
+<div *ngIf="actionIcon.menu" class="dropdown-menu" aria-labelledby="actionIconDropdown">
+    <ng-template *ngIf="actionIcon.menu" #menuContainer></ng-template>
 </div>

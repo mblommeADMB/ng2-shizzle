@@ -25,6 +25,7 @@ import {ActionIconComponent} from './components/icons/action-icon/action-icon.co
 import {EmotionService} from './services/emotion.service';
 import {EmotionReferenceConverter} from './model/converters/emotion-reference.converter';
 import {EmotionsSandbox} from './sandboxes/emotions.sandbox';
+import {ComponentLoaderService} from './services/component-loader.service';
 import { ActionBarComponent } from './components/icons/action-bar/action-bar.component';
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({maxAge: 5})];
@@ -42,6 +43,7 @@ const CONVERTERS = [
 
 const COMPONENTS = [
     AppComponent,
+    HeaderComponent,
     RecipeComponent,
     RecipeSummaryComponent,
     IconsComponent,
@@ -53,6 +55,7 @@ const SERVICES = [
     RecipeService,
     LabelService,
     EmotionService,
+    ComponentLoaderService,
 ];
 
 const SANDBOXES = [
@@ -68,8 +71,6 @@ const MODULES = [
 @NgModule({
     declarations: [
         COMPONENTS,
-        HeaderComponent,
-        ActionBarComponent,
     ],
     imports: [
         BrowserModule,
@@ -81,6 +82,9 @@ const MODULES = [
         CONVERTERS,
         SERVICES,
         SANDBOXES,
+    ],
+    entryComponents: [
+        ActionIconComponent,
     ],
     bootstrap: [AppComponent]
 })
