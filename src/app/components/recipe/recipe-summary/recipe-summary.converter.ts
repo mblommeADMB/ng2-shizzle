@@ -36,6 +36,7 @@ export class RecipeSummaryConverter implements Converter<Recipe, RecipeSummary> 
                     .then((label: Label) => {
                         const categoryIcon: ActionIcon = {
                             icon: label.svgId,
+                            svgStyle: 'icon--md'
                         }
                         categoryIcons.push(categoryIcon);
                     })

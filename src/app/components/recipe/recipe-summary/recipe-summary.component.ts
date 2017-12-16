@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {RecipeSummary} from './recipe-summary.viewmodel';
 import {ActionIcon} from '../../icons/action-icon/action-icon.model';
+import {ActionIconComponent} from '../../icons/action-icon/action-icon.component';
 
 @Component({
     selector: 'app-recipe-summary',
@@ -22,7 +23,10 @@ export class RecipeSummaryComponent implements OnInit {
     private getTotalTimeActionIcon(): ActionIcon {
         return {
             icon: '#kitchen-timer',
+            svgStyle: 'icon--md',
             label: String(this.recipeSummary.totalTime),
+            menu: ActionIconComponent,
+            menuData: { actionIcon: {icon: '#kitchen-timer', svgStyle: 'icon--md'}},
         }
     }
 }
