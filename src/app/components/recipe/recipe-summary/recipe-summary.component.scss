@@ -1,3 +1,14 @@
 .card-header--padding {
   padding: 0 0.5rem 0.5rem;
 }
+
+.recipe-summary {
+    &-header {
+        background-image: url('http://weknowyourdreams.com/images/picture/picture-04.jpg');
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        &-actionbar {
+        }
+    }
+}

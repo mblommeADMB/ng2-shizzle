@@ -8,3 +8,4 @@ export interface ActionIcon {
   menuData?: Object;
   svgStyle?: string;
 }
+

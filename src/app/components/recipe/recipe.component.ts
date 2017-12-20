@@ -3,6 +3,12 @@ import {Component, OnInit} from '@angular/core';
 import {RecipeSummary} from './recipe-summary/recipe-summary.viewmodel';
 import {Recipe} from '../../model/recipe.model';
 import {RecipeSummaryConverter} from './recipe-summary/recipe-summary.converter';
+import {ActionIcon} from "../icons/action-icon/action-icon.model";
+import {ActionIconBuilder} from "../icons/action-icon/action-icon.builder";
+import {ActionBarComponent} from "../icons/action-bar/action-bar.component";
+import {createLabel} from "../../model/label.model";
+import {Observable} from "rxjs/Observable";
+import "rxjs/add/observable/of";
 
 @Component({
     selector: 'app-recipe',
@@ -22,9 +28,63 @@ export class RecipeComponent implements OnInit {
         this.recipeSandbox.recipes$.subscribe(
             (recipes: Array<Recipe>) => {
                 recipes.forEach((recipe: Recipe) => {
-                    this.recipeSummaries.push(this.recipeSummaryConverter.to(recipe));
+                    const recipeSummary: RecipeSummary = this.recipeSummaryConverter.to(recipe);
+                    recipeSummary.actionBarItems$ = Observable.of(this.createActionBarItems());
+                    this.recipeSummaries.push(recipeSummary);
                 })
             })
     }
 
+    private createActionBarItems(): Array<ActionIcon> {
+        const likeAction: ActionIcon = ActionIconBuilder.createActionIcon('#emoticon')
+            .withAction(null)
+            .withLabel('')
+            .withSvgStyle('icon--lg')
+            .withMenu(ActionBarComponent)
+            .withMenuData({actionIcons$: Observable.of(this.createLikeActions())})
+            .build();
+
+        const starAction: ActionIcon = ActionIconBuilder.createActionIcon('#star')
+            .withAction(null)
+            .withLabel('')
+            .withSvgStyle('icon--lg')
+            .build();
+
+        const rateAction: ActionIcon = ActionIconBuilder.createActionIcon('#like')
+            .withAction(null)
+            .withLabel('')
+            .withSvgStyle('icon--lg')
+            .build();
+        const shareAction: ActionIcon = ActionIconBuilder.createActionIcon('#share')
+            .withAction(null)
+            .withLabel('')
+            .withSvgStyle('icon--lg')
+            .build();
+        return [likeAction, starAction, rateAction, shareAction];
+    }
+
+    private createLikeActions(): Array<ActionIcon> {
+        const sadAction: ActionIcon = ActionIconBuilder.createActionIcon('#sad')
+            .withSvgStyle('icon--lg')
+            .withAction(() => {
+                console.log('sad action')
+            })
+            .build();
+
+        const inLoveAction: ActionIcon = ActionIconBuilder.createActionIcon('#sad')
+            .withSvgStyle('icon--lg')
+            .withAction(() => {
+                console.log('in love action')
+            })
+            .build();
+
+        const scaredAction: ActionIcon = ActionIconBuilder.createActionIcon('#sad')
+            .withSvgStyle('icon--lg')
+            .withAction(() => {
+                console.log('scared action')
+            })
+            .build();
+
+        return [sadAction, inLoveAction, scaredAction];
+    }
 }

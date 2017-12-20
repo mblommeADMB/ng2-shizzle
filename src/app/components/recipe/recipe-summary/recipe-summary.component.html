@@ -1,5 +1,7 @@
 <div class="card border w50">
-    <img class="card-img-top" [src]="recipeSummary.pictureUrl" [alt]="recipeSummary.pictureCap">
+    <div class="recipe-summary-header w-100">
+        <app-action-bar class="recipe-summary-header-actionbar d-inline-block" [actionIcons$]="recipeSummary.actionBarItems$"></app-action-bar>
+    </div>
     <div class="card-header card-header--padding">
         <div class="mt-1 d-flex justify-content-between">
             <app-action-icon [actionIcon]="eggTimer"></app-action-icon>

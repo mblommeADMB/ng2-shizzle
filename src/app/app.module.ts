@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {RecipeComponent} from './components/recipe/recipe.component';
 import {RecipeSummaryComponent} from './components/recipe/recipe-summary/recipe-summary.component';
@@ -26,7 +25,7 @@ import {EmotionService} from './services/emotion.service';
 import {EmotionReferenceConverter} from './model/converters/emotion-reference.converter';
 import {EmotionsSandbox} from './sandboxes/emotions.sandbox';
 import {ComponentLoaderService} from './services/component-loader.service';
-import { ActionBarComponent } from './components/icons/action-bar/action-bar.component';
+import {ActionBarComponent} from "./components/icons/action-bar/action-bar.component";
 
 const DEV_TOOLS = (environment.production) ? [] : [StoreDevtoolsModule.instrument({maxAge: 5})];
 
@@ -48,6 +47,7 @@ const COMPONENTS = [
     RecipeSummaryComponent,
     IconsComponent,
     ActionIconComponent,
+    ActionBarComponent,
 ];
 
 const SERVICES = [

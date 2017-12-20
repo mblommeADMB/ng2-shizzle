@@ -1,4 +1,5 @@
 import {ActionIcon} from '../../icons/action-icon/action-icon.model';
+import {Observable} from "rxjs/Observable";
 
 export interface RecipeSummary {
   title: string;
@@ -7,6 +8,7 @@ export interface RecipeSummary {
   pictureCap: string;
   totalTime: number;
   categoryIcons?: Array<ActionIcon>;
+  actionBarItems$?: Observable<Array<ActionIcon>>;
 }
 
 export function createRecipeSummary() : RecipeSummary {
