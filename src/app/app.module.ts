@@ -85,6 +85,7 @@ const MODULES = [
     ],
     entryComponents: [
         ActionIconComponent,
+        ActionBarComponent,
     ],
     bootstrap: [AppComponent]
 })

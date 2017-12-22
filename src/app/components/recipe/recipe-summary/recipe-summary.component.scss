@@ -4,11 +4,9 @@
 
 .recipe-summary {
     &-header {
-        background-image: url('http://weknowyourdreams.com/images/picture/picture-04.jpg');
         margin: 0;
-        padding: 0;
         background-size: cover;
-        &-actionbar {
-        }
+        background-repeat: no-repeat;
     }
 }
+

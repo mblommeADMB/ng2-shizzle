@@ -1,3 +1,5 @@
-<ng-template ngFor let-actionIcon [ngForOf]="actionIcons$ | async">
-    <app-action-icon [actionIcon]="actionIcon" class="mr-1"></app-action-icon>
-</ng-template>
+<div class="d-flex justify-content-end">
+    <ng-template ngFor let-actionIcon [ngForOf]="actionIcons$ | async">
+        <app-action-icon class="ml-1" [actionIcon]="actionIcon"></app-action-icon>
+    </ng-template>
+</div>

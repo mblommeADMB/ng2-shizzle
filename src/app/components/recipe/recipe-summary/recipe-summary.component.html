@@ -1,13 +1,16 @@
 <div class="card border w50">
-    <div class="recipe-summary-header w-100">
-        <app-action-bar class="recipe-summary-header-actionbar d-inline-block" [actionIcons$]="recipeSummary.actionBarItems$"></app-action-bar>
+    <div class="recipe-summary-header" [ngStyle]="{'background-image': 'url(' + recipeSummary.pictureUrl + ')'}">
+        <div class="m-2">
+            <app-action-bar [actionIcons$]="recipeSummary.actionBarItems$"></app-action-bar>
+        </div>
+        <img class="card-img-top" [src]="recipeSummary.pictureUrl" style="visibility: hidden"/>
     </div>
     <div class="card-header card-header--padding">
         <div class="mt-1 d-flex justify-content-between">
             <app-action-icon [actionIcon]="eggTimer"></app-action-icon>
-            <div>
+            <div class="d-flex">
                 <ng-template ngFor let-categoryIcon [ngForOf]="recipeSummary.categoryIcons">
-                    <app-action-icon [actionIcon]="categoryIcon"></app-action-icon>
+                    <app-action-icon class="ml-1" [actionIcon]="categoryIcon"></app-action-icon>
                 </ng-template>
             </div>
         </div>
