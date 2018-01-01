@@ -6,7 +6,6 @@ import {RecipeSummaryConverter} from './recipe-summary/recipe-summary.converter'
 import {ActionIcon} from "../icons/action-icon/action-icon.model";
 import {ActionIconBuilder} from "../icons/action-icon/action-icon.builder";
 import {ActionBarComponent} from "../icons/action-bar/action-bar.component";
-import {createLabel} from "../../model/label.model";
 import {Observable} from "rxjs/Observable";
 import "rxjs/add/observable/of";
 
@@ -17,7 +16,7 @@ import "rxjs/add/observable/of";
 })
 export class RecipeComponent implements OnInit {
 
-    recipeSummaries: Array<RecipeSummary> = [];
+    recipeSummaries$: Observable<Array<RecipeSummary>> = this.recipeSandbox.recipeSummaries$;
 
     constructor(private recipeSandbox: RecipeSandbox,
                 private recipeSummaryConverter: RecipeSummaryConverter) {
@@ -29,8 +28,8 @@ export class RecipeComponent implements OnInit {
             (recipes: Array<Recipe>) => {
                 recipes.forEach((recipe: Recipe) => {
                     const recipeSummary: RecipeSummary = this.recipeSummaryConverter.to(recipe);
+                    this.recipeSandbox.addRecipeSummary(recipeSummary);
                     recipeSummary.actionBarItems$ = Observable.of(this.createActionBarItems());
-                    this.recipeSummaries.push(recipeSummary);
                 })
             })
     }

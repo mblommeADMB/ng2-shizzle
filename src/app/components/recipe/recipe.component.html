@@ -1,5 +1,5 @@
 <div class="row card-body">
-    <app-recipe-summary *ngFor="let recipeSummary of recipeSummaries"
+    <app-recipe-summary *ngFor="let recipeSummary of (recipeSummaries$ | async)"
                         [recipeSummary]="recipeSummary"
                         class="mt-4 col col-md-3 col-sm-2">
     </app-recipe-summary>
